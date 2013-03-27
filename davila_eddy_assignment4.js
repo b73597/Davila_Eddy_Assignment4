@@ -4,7 +4,7 @@
 
 //Visual Frameworks Library Functions
 
-// REVEALING MODULE PATTER EXERCISE.
+// REVEALING MODULE PATTER EXERCISE NOT A SOLVED PROBLEM. EXERCISE ONLY
 var myLibrary = function(){
     
     // CHECK NUMERIC F
@@ -17,19 +17,28 @@ var myLibrary = function(){
     }
 
 
-    // CHECK NAME F
+    // CHECK NAME FUNCTION 
+    var areyouEd = function(val) {
+        if (val === "Ed") {
+            return true;
+        }else {
+            return false;}
+        
+    }
 
 
 
     // CHECK STRING PATTERN
 
     return {
-        "checkNum": checkNum
+        "checkNum": checkNum,
+        "areyouEd": areyouEd
         
     }
 }
 
 
 var newLib = new myLibrary();
-console.log("Valid Number is: " + newLib.checkNum(156));
+console.log("How the Module Works: " + newLib.checkNum(156));
+console.log("How the name function works: " + newLib.areyouEd("Ed"));
 
