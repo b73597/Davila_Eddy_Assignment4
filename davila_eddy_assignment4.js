@@ -67,7 +67,7 @@ var myLibrary = function(){
     
         // CAPS EVERY FIRST LETTER OF A WORD
         // CAPS EVERY FIRST LETTER OF A WORD
-        var capFirstLet = function (string) {
+        var capFirstLet = function (string){
 		var split = string.split(" ");
 		var outcome = "";
 		for (var i = 0, j = split.length; i < j; i++) {
@@ -76,6 +76,12 @@ var myLibrary = function(){
 		};
 		return outcome;
 	}
+        
+        // CHECK NUMERIC FUNCTIONS: string2Num, formatNumber
+        // CHANGE STRING TO NUMBER
+        var string2Num = function (number){
+            return Number(number);
+        }
 
     return {
         
@@ -87,7 +93,8 @@ var myLibrary = function(){
         "verifyNum"  : verifyNum,
         "verifyEMail": verifyEMail,
         "verifyUrl"  : verifyUrl,
-        "capFirstLet": capFirstLet
+        "capFirstLet": capFirstLet,
+        "string2Num" : string2Num
        
         }
 }
@@ -103,5 +110,5 @@ console.log("Is NaM a number?: " + newLib.verifyNum("123-456-7890"));
 console.log("Is e-mail valid?: " + newLib.verifyEMail("eddavila@fullsail.edu"));
 console.log("Is URL valid?   : " + newLib.verifyUrl("http://valid.com"));
 console.log("First letter must always be upper case:" + newLib.capFirstLet(" eddy omar davila"));
-
+console.log('Data type change from string "42" to number ' + newLib.string2Num("42"));
 
