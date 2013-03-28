@@ -57,6 +57,13 @@ var myLibrary = function(){
 		return pattern.test(string);
     }
     
+    
+        // CHECK VALID URL 
+	var verifyUrl = function (string) {
+		var pattern = /^(?:http|https):/;
+		return pattern.test(string);
+    }
+    
 
     return {
         
@@ -65,8 +72,9 @@ var myLibrary = function(){
         //"areyouEd": areyouEd,
         //"checkString": checkString,
         //END OF REVEALING MODULE PATTER EXERCISE NOT A SOLVED PROBLEM. EXERCISE ONLY
-        "verifyNum": verifyNum,
-         "verifyEMail" : verifyEMail
+        "verifyNum"  : verifyNum,
+        "verifyEMail": verifyEMail,
+        "verifyUrl"  : verifyUrl
        
         
         
@@ -80,7 +88,8 @@ var newLib = new myLibrary();
 //console.log("How the name function works: " + newLib.areyouEd("Ed"));
 //console.log("The dash is in posotion: " + newLib.checkString("1234-56"));
 //END OF REVEALING MODULE PATTER EXERCISE NOT A SOLVED PROBLEM. EXERCISE ONLY
-console.log("Valid entry is:" + newLib.verifyNum("123-456-7890"));
-console.log("Email is valid: " + newLib.verifyEMail("eddavila@fullsail.edu"));
+console.log("Is NaM a number?: " + newLib.verifyNum("123-456-7890"));
+console.log("Is e-mail valid?: " + newLib.verifyEMail("eddavila@fullsail.edu"));
+console.log("Is URL valid?   : " + newLib.verifyUrl("http://valid.com"));
 
 
