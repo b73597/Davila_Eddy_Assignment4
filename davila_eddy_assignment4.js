@@ -46,24 +46,36 @@ var myLibrary = function(){
     //CHECK STRING FUNCTIONS: verifyNum, verifyEMail, verifyUrl, capFirstLet.
     // CHECK VALID PHONE NUMBER
     var verifyNum = function (string) {
-		var pattern = /\d{3}-\d{3}-\d{4}/;
-		return pattern.test(string);
+	    var pattern = /\d{3}-\d{3}-\d{4}/;
+	    return pattern.test(string);
             
     }
     
     // CHECK VALID E-MAIL 
-	var verifyEMail = function (string) {
-		var pattern = /^\w+@[\w.\-]+\.[A-Za-z]{2,3}$/;
-		return pattern.test(string);
+	var verifyEMail = function (string){
+	    var pattern = /^\w+@[\w.\-]+\.[A-Za-z]{2,3}$/;
+	    return pattern.test(string);
     }
     
     
         // CHECK VALID URL 
-	var verifyUrl = function (string) {
-		var pattern = /^(?:http|https):/;
-		return pattern.test(string);
+	var verifyUrl = function (string){
+	    var pattern = /^(?:http|https):/;
+	    return pattern.test(string);
     }
     
+    
+        // CAPS EVERY FIRST LETTER OF A WORD
+        // CAPS EVERY FIRST LETTER OF A WORD
+        var capFirstLet = function (string) {
+		var split = string.split(" ");
+		var outcome = "";
+		for (var i = 0, j = split.length; i < j; i++) {
+			var strSplitt = split[i].replace(split[i].charAt(0),(split[i].charAt(0)).toUpperCase());
+			outcome = outcome.concat( strSplitt + " ");
+		};
+		return outcome;
+	}
 
     return {
         
@@ -74,11 +86,10 @@ var myLibrary = function(){
         //END OF REVEALING MODULE PATTER EXERCISE NOT A SOLVED PROBLEM. EXERCISE ONLY
         "verifyNum"  : verifyNum,
         "verifyEMail": verifyEMail,
-        "verifyUrl"  : verifyUrl
+        "verifyUrl"  : verifyUrl,
+        "capFirstLet": capFirstLet
        
-        
-        
-    }
+        }
 }
 
 
@@ -91,5 +102,6 @@ var newLib = new myLibrary();
 console.log("Is NaM a number?: " + newLib.verifyNum("123-456-7890"));
 console.log("Is e-mail valid?: " + newLib.verifyEMail("eddavila@fullsail.edu"));
 console.log("Is URL valid?   : " + newLib.verifyUrl("http://valid.com"));
+console.log("First letter must always be upper case:" + newLib.capFirstLet(" eddy omar davila"));
 
 
