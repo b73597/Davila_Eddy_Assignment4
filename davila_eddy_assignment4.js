@@ -51,6 +51,12 @@ var myLibrary = function(){
             
     }
     
+    // CHECK VALID E-MAIL 
+	var verifyEMail = function (string) {
+		var pattern = /^\w+@[\w.\-]+\.[A-Za-z]{2,3}$/;
+		return pattern.test(string);
+    }
+    
 
     return {
         
@@ -60,6 +66,7 @@ var myLibrary = function(){
         //"checkString": checkString,
         //END OF REVEALING MODULE PATTER EXERCISE NOT A SOLVED PROBLEM. EXERCISE ONLY
         "verifyNum": verifyNum,
+         "verifyEMail" : verifyEMail
        
         
         
@@ -74,5 +81,6 @@ var newLib = new myLibrary();
 //console.log("The dash is in posotion: " + newLib.checkString("1234-56"));
 //END OF REVEALING MODULE PATTER EXERCISE NOT A SOLVED PROBLEM. EXERCISE ONLY
 console.log("Valid entry is:" + newLib.verifyNum("123-456-7890"));
+console.log("Email is valid: " + newLib.verifyEMail("eddavila@fullsail.edu"));
 
 
