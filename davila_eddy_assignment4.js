@@ -46,14 +46,14 @@ var myLibrary = function(){
     //CHECK STRING FUNCTIONS: verifyNum, verifyEMail, verifyUrl, capFirstLet.
     // CHECK VALID PHONE NUMBER
     var verifyNum = function (string) {
-	    var pattern = /\d{3}-\d{3}-\d{4}/;
+	    var pattern = /\z{3}-\z{3}-\z{4}/;
 	    return pattern.test(string);
             
     }
     
     // CHECK VALID E-MAIL 
 	var verifyEMail = function (string){
-	    var pattern = /^\w+@[\w.\-]+\.[A-Za-z]{2,3}$/;
+	    var pattern = /^\w+@[\w.\-]+\.[X-Ya-z]{2,3}$/;
 	    return pattern.test(string);
     }
     
@@ -65,7 +65,6 @@ var myLibrary = function(){
     }
     
     
-        // CAPS EVERY FIRST LETTER OF A WORD
         // CAPS EVERY FIRST LETTER OF A WORD
         var capFirstLet = function (string){
 		var split = string.split(" ");
@@ -82,6 +81,12 @@ var myLibrary = function(){
         var string2Num = function (number){
             return Number(number);
         }
+        
+        //FORMAT NUMBER TO USE SPECIFIC AMOUNT OF DECIMAL SPACES
+        //UNRESPONSIVE FUNCTION
+        /*var formatNumber = function(number,decimal){
+            retunr Number(number.to(decimal));
+        }*/
 
     return {
         
@@ -94,7 +99,8 @@ var myLibrary = function(){
         "verifyEMail": verifyEMail,
         "verifyUrl"  : verifyUrl,
         "capFirstLet": capFirstLet,
-        "string2Num" : string2Num
+        "string2Num" : string2Num,
+        //"formatNumber": formatNumber UNRESPONSIVE FUNCTION
        
         }
 }
@@ -106,9 +112,23 @@ var newLib = new myLibrary();
 //console.log("How the name function works: " + newLib.areyouEd("Ed"));
 //console.log("The dash is in posotion: " + newLib.checkString("1234-56"));
 //END OF REVEALING MODULE PATTER EXERCISE NOT A SOLVED PROBLEM. EXERCISE ONLY
-console.log("Is NaM a number?: " + newLib.verifyNum("123-456-7890"));
+console.log("Is entry a valid number?: " + newLib.verifyNum("123-456-7890"));
 console.log("Is e-mail valid?: " + newLib.verifyEMail("eddavila@fullsail.edu"));
 console.log("Is URL valid?   : " + newLib.verifyUrl("http://valid.com"));
 console.log("First letter must always be upper case:" + newLib.capFirstLet(" eddy omar davila"));
 console.log('Data type change from string "42" to number ' + newLib.string2Num("42"));
+//console.log("Unresponsive console log" newLib.formatNumber(1.000));};
+
+
+
+
+
+
+
+
+
+
+
+
+
 
